@@ -1,0 +1,257 @@
+/*** CANCEL ***/
+html, body { width: 100%; height: 100%; }
+main { min-height: 100%; }
+
+.u-cursor,
+.display hgroup { pointer-events: none; }
+.header-figure-hgroup-h2 { text-wrap: nowrap !important; }
+/*** END CANCEL ***/
+
+/*** Z-INDEXES ***/
+.display-gallery { position: relative; z-index: 10; }
+.display hgroup { position: relative; z-index: 20; }
+.u-cursor { position: relative; z-index: 30; }
+/*** END Z-INDEXES ***/
+
+/*** COLORS ***/{% assign vColorPurple = '#340853' %}
+ { background-color: {{ vColorPurple }}; }
+ { background-color: purple; }
+
+.display-gallery-grid-figure { background-color: white; }
+.display h3,
+.header-figure-hgroup-h2 { color: white; }
+footer a:hover,
+footer a:active,
+footer a:focus {// color: white; }
+/*** END COLORS ***/
+
+/*** FONTS ***/
+* { font-family: "Impact"; word-spacing: .15em; }
+	 { letter-spacing: .1em; }
+.display h3,
+.header-figure-hgroup-h1 span { font-family: "Bauhaus"; line-height: 1.15em; word-spacing: initial !important; }
+.header-figure-hgroup-h2 { font-family: "The Rich Jullietta DEMO"; }
+
+ { font-size: 1.9em; }
+ { font-size: 1em; }
+ { font-size: .75em; }
+
+.header { text-align: center; }
+.header-nav { text-align: left; }
+.display-gallery-grid-figure, 
+footer { text-align: right; }
+footer a { text-decoration: underline; }
+/*** END FONTS ***/
+
+/*** MEDIA ***/
+* { background-size: cover; }
+
+main { background-image: url("/assets/images/purple-background.png"); }
+	main {
+//		background-position: fixed;
+	}
+
+.u-cursor { background-image: url("/assets/images/purple-creed.png"); }
+
+.header a { background-image: url("/assets/images/icon_instagram_black.png"); }
+.header a:hover,
+.header a:active,
+.header a:focus { background-image: url("/assets/images/icon_instagram_white.png"); }
+
+.display-gallery-grid-figure {
+	background-color: transparent !important;
+}
+/*** END MEDIA ***/
+
+/*** UTILITIES ***/
+	/*** .u-cursor ***/
+	.u-cursor {
+		position: fixed;
+		min-width: 1em; aspect-ratio: 1/1;
+		transform: translate(-50%, -75%);
+	}
+/*** END UTILITIES ***/
+
+/*** COMPONENTS ***/
+	/*** COMMONS ***/
+	main { display: flex; flex-direction: column; }
+	.d-spacer { flex: 1; }
+	
+	footer,
+	.header {
+		padding: 1em;
+	}
+
+	/*** .display ***/
+	.display {
+		position: relative;
+	}
+	.display-gallery {
+		width: 100%;
+		display: grid;
+		padding: 0 .5em;
+	}
+	.display-gallery-grid {
+		padding: .5em .5em;
+	}
+	.display-gallery-grid-figure {
+		width: 100%; aspect-ratio: 1/1;
+//		max-height: 90%;
+		padding-right: .25em;
+	}
+	.display-gallery-grid-figure:hover,
+	.display-gallery-grid-figure:active,
+	.display-gallery-grid-figure:focus {
+		transform: scale(1.8);
+//		transform: scale(4);
+	}
+	
+	.display hgroup {
+		position: absolute; top: 0; left: 0;
+		width: 100%; height: 100%;
+	}
+	
+	/*** .header ***/
+	.header-figure,
+	.header-figure-hgroup {
+		position: relative;
+		display: inline-block;
+	}
+	.header-figure-hgroup-h1 span:last-child {
+		position: relative; right: .5em;
+		display: block; text-align: right;
+	}
+	.header-figure-hgroup-h2 {
+		position: absolute; right: 1em;
+	}
+	
+	.header-figure-img {
+		position: absolute; top: 0;
+		width: auto; max-width: initial;
+	}
+	
+	.header a {
+		position: absolute; top: 1em; right: 1em;
+		aspect-ratio: 1/1;
+	}
+/*** END COMPONENTS ***/
+
+/*** INTERACTIVITY ***/
+.display-gallery-grid-figure { cursor: pointer; }
+.display {// cursor: none !important; }
+
+.u-cursor { visibility: hidden; }
+.display:hover ~ .u-cursor,
+.display:active ~ .u-cursor { visibility: visible; }
+
+.display-gallery-grid-figure {// color: transparent; }
+.display-gallery-grid-figure:hover {// color: purple; }
+
+.display:hover hgroup,
+.display:active hgroup,
+.display:focus hgroup { display: none; }
+/*** END INTERACTIVITY ***/
+
+/*** MEDIA-QUERIES ***/
+@media all and (max-width: 50em) {
+	/*** FONTS ***/
+	html { font-size: 16px; }
+	.display h3,
+	.header-figure-hgroup-h1 { font-size: 7vw; }
+	.header-figure-hgroup-h2 { font-size: 5vw; }
+	
+	/*** COMMONS ***/
+	.d-spacer {
+		min-height: 1.8em;
+	}
+	
+	/*** UTILITIES: .u-cursor ***/
+	.u-cursor { height: 35vw; }
+	
+	/*** COMPONENTS: .display ***/
+	.display hgroup {// align-items: flex-start !important; }
+	
+	.display-gallery {
+		grid-template-columns: {% for i in (1..3) %}33.333% {% endfor %};
+	}
+	
+	/*** COMPONENTS: .header ***/
+	.header a { width: 1em; }
+	.header-nav img { width: auto; height: 7vw; max-height: 1.8em; }
+	
+	.header { min-height: 40vw; }
+	.header-figure { left: -2.5em; }
+	.header-figure-img { left: 80%; height: 60vw !important; }
+	.header-figure-hgroup-h2 {
+		right: initial; left: 0; bottom: 0;
+	}
+}
+@media all and (min-width: 50em) {
+	/*** FONTS ***/
+	html { font-size: 19px; }
+	.display h3 { font-size: 3em; }
+	.header-figure-hgroup-h1 { font-size: 7em; }
+	.header-figure-hgroup-h2 { font-size: 5em; }
+	
+	/*** UTILITIES: .u-cursor ***/
+	.u-cursor { height: 18vw; }
+	
+	/*** COMPONENTS: .display ***/
+	.display-gallery {
+//		grid-template-columns: {% for i in (1..16) %}6.25% {% endfor %};
+		grid-template-columns: {% for i in (1..6) %}16.666% {% endfor %};
+//		grid-template-columns: {% for i in (1..12) %}8.333% {% endfor %};
+	}
+	
+	/*** COMPONENTS: .header ***/
+	.header a { width: 1.9em; }
+	.header-nav img { width: auto; height: 1.8em; }
+	
+	.header { min-height: 70vh; }
+	.header-figure { left: -5em; }
+	.header-figure-img { left: 90%; height: 100vh !important; }
+	.header-figure-hgroup-h2 { bottom: .25em; }
+}
+
+@media all and (orientation: landscape) {}
+@media all and (orientation: portrait) {}
+/*** END MEDIA-QUERIES ***/
+
+/*** DECORATION ***/
+	/*** .d-cssCentered ***/
+	.d-cssCentered {
+		display: flex;
+		align-items: center; justify-content: center;
+	}
+	
+	/*** .d-midWrap ***/
+	.d-midWrap {
+		max-width: 75em;
+		display: block;
+		margin: auto;
+	}
+/*** END DECORATION ***/
+
+/*** CSS HACKS ***/
+html { overflow-x: hidden; }
+
+/*
+// Cropping the Body
+.header {
+	position: relative;
+	overflow-y: hidden;
+}
+.display-gallery-grid {
+	padding-top: 0; padding-bottom: 1em;
+}
+*/
+/*** END CSS HACKS ***/
+
+/*** SANDBOX ***/
+.u-cursor { opacity: .7; }
+
+.header-figure-img {// filter: grayscale(100%); }
+
+.display-gallery-grid:nth-child(even) .display-gallery-grid-figure {// background-color: purple; }
+.display-gallery-grid:nth-child(odd) .display-gallery-grid-figure {// background-color: green; }
+/*** END SANDBOX ***/

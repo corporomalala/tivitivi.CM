@@ -1,0 +1,174 @@
+/*** CANCEL ***/
+html, body { width: 100%; height: 100%; }
+main { min-height: 100%; }
+/*** END CANCEL ***/
+
+/*** Z-INDEXES ***/
+.section-hgroup-h1 { position: relative; z-index: 10; }
+/*** END Z-INDEXES ***/
+
+/*** COLORS ***/{% assign vColorPurple = '#340853' %}
+ { background-color: {{ vColorPurple }}; }
+ { background-color: purple; }
+
+.section-text { color: white; }
+/*** END COLORS ***/
+
+/*** FONTS ***/
+ { font-family: "Impact"; word-spacing: .15em; }
+	 { letter-spacing: .1em; }
+* { font-family: "Bauhaus"; line-height: 1.15em; word-spacing: initial !important; }
+.section-hgroup-h1,
+.d-handwritten { font-family: "The Rich Jullietta DEMO"; }
+/*** END FONTS ***/
+
+/*** MEDIA ***/
+* { background-size: cover; }
+
+main { background-image: url("/assets/images/purple-background.png"); }
+
+{% for i in (1..3) %}
+.section-gallery-figure:nth-child({{ i }}) .section-gallery-figure_dock { background-image: url("/assets/images/image{{ i }}.jpg"); }{% endfor %}
+.section-gallery-figure_dock {
+	background-color: white;
+	background-size: 90% auto;
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+.bonus { background-image: url("/assets/images/products.jpg"); }
+.bonus {
+	background-position: top right;
+	background-size: auto 100%;
+}
+/*** END MEDIA ***/
+
+/*** COMPONENTS ***/
+	/*** COMMONS ***/
+	
+	/*** .bonus ***/
+	.bonus {
+		display: block;
+	}
+
+	/*** .section ***/
+	.section-gallery { display: flex; }
+	.section-gallery-figure { flex: 1; }
+
+	.section-hgroup-h1 {
+		color: white;
+	}
+	.section-hgroup-span {
+		position: relative; top: .75em; left: 2.5em;
+	}
+	
+	.section-gallery,
+	.section-text {
+		position: relative; left: 10%;
+		width: 90%;
+	}
+
+	.section-gallery-figure_dock {
+		display: block; width: 100%; height: 100%;
+	}
+	
+	.section {
+		position: relative;
+	}
+	.section-text {
+		position: absolute; bottom: 0;
+	}
+	.section-text_dock {
+		position: relative;
+	}
+/*** END COMPONENTS ***/
+
+/*** MEDIA-QUERIES ***/
+@media all and (max-width: 50em) {
+	/*** FONTS ***/
+	html { font-size: 16px; }
+	.section-hgroup-h1 { font-size: 18vw; }
+	.section-hgroup-span { font-size: 8vw; }
+	.section-text_dock span { font-size: 1.5em; }
+		
+	/*** COMPONENTS: .bonus ***/
+	.bonus {
+		width: 90%; height: 40vw;
+		margin-top: 10vw;
+	}
+	
+	/*** COMPONENTS: .section ***/
+	.section-gallery { height: 50vh; }
+	.section-gallery-figure {
+		margin-left: .5em;
+	}
+	.section-gallery-figure:first-child {
+		margin-left: initial !important;
+	}
+	.section-gallery-figure:nth-child(2),
+	.section-gallery-figure:nth-child(3) {
+		padding-bottom: 5em;
+	}
+	.section-gallery-figure:last-child { display: none !important; }
+	
+	.section-text_dock {
+			left: 50%;
+		width: 50%;
+		padding: 0 .5em;
+	}
+}
+@media all and (min-width: 50em) {
+	/*** FONTS ***/
+	html { font-size: 19px; }
+	.section-hgroup-h1 { font-size: 7em; }
+	 { font-size: 5em; }
+	.section-hgroup-span { font-size: 3em; }
+	.section-text_dock span { font-size: 1.75em; }
+	.section-text_dock { font-size: 1.8em; }
+	
+	/*** COMPONENTS: .bonus ***/
+	.bonus {
+		width: 75%; height: 50vh;
+		margin-top: 7em;
+	}
+	 
+	/*** COMPONENTS: .section ***/
+	.section-gallery { height: 70vh; }
+	.section-gallery-figure {
+		margin-left: 1em;
+	}
+	.section-gallery-figure:nth-child(2),
+	.section-gallery-figure:nth-child(3) {
+		padding-bottom: 5em;
+	}
+	
+	.section-text_dock {
+			left: 33.333%;
+		width: 66.666%;
+		padding: 0 1em;
+	}
+	.section-text_dock span { margin: 0 .18em; }
+}
+
+@media all and (orientation: landscape) {}
+@media all and (orientation: portrait) {}
+/*** END MEDIA-QUERIES ***/
+
+/*** DECORATION ***/
+	/*** .d-cssCentered ***/
+	.d-cssCentered {
+		display: flex;
+		align-items: center; justify-content: center;
+	}
+	
+	/*** .d-midWrap ***/
+	.d-midWrap {
+		max-width: 65em;
+		display: block;
+		margin: auto;
+	}
+/*** END DECORATION ***/
+
+/*** CSS HACKS ***/
+html { overflow-x: hidden; }
+/*** END CSS HACKS ***/

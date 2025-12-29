@@ -1,0 +1,136 @@
+/*** CANCEL ***/
+html, body, main { width: 100%; height: 100%; }
+/*** END CANCEL ***/
+
+/*** COLORS ***/{% assign vColor = "DA301E" %}
+html {// background-color: #{{ vColor }} }
+/*** END COLORS ***/
+
+/*** FONTS ***/
+@font-face { font-family: "CrackMan"; src: url("/assets/fonts/crackman.ttf"); }
+@font-face { font-family: "CrackMan Front"; src: url("/assets/fonts/crackman front.ttf"); }
+@font-face { font-family: "Impact"; src: url("/assets/fonts/impact.ttf"); }
+
+* { font-family: "Impact"; word-spacing: .15em; }
+* { font-family: "CrackMan Front"; }
+
+	 { letter-spacing: .1em; line-height: 1.15em; word-spacing: initial !important; }
+/*** END FONTS ***/
+
+/*** MEDIA ***/
+* { background-size: cover; background-position: center; }
+/*** END MEDIA ***/
+
+/*** UTILITIES ***/
+	/*** .u-cursor ***/
+	.u-cursor {
+		position: fixed;
+		min-width: 1em; aspect-ratio: 1/1;
+		transform: translate(-50%, -75%);
+	}
+/*** END UTILITIES ***/
+
+/*** COMPONENTS ***/
+	/*** COMMONS ***/
+
+	/*** .thedress ***/
+	.thedress { display: flex; }
+	
+	.thedress {
+		width: 100%; height: 100%;
+		
+//		background-color: green;
+	}
+/*** END COMPONENTS ***/
+
+/*** INTERACTIVITY ***/
+/*** END INTERACTIVITY ***/
+
+/*** MEDIA-QUERIES ***/
+@media all and (max-width: 50em) {
+	/*** FONTS ***/
+	html { font-size: 14px; }
+	
+	/*** COMPONENTS: .thedress ***/
+	.thedress { flex-direction: column; }
+	.thedress-gallery { flex: 1; }
+	
+	.thedress-gallery { width: 100%; }
+	.thedress-gallery { padding: 1.8em; }
+	
+	/*** VIEWPORT ***/
+	.thedress-gallery {
+		
+	}
+	.thedress-waitlist {
+		aspect-ratio: 16/9;
+		background-size: 118% auto;
+	}
+}
+@media all and (min-width: 50em) {
+	/*** FONTS ***/
+	html { font-size: 18px; }
+	
+	/*** MEDIA ***/
+	.thedress-waitlist { background-position: left; }
+	
+	/*** COMPONENTS: .thedress ***/
+	.thedress { flex-direction: row-reverse; }
+	.thedress-waitlist { flex: 1; }
+
+	.thedress-gallery { width: 30vw; }
+	.thedress-gallery { padding: 5em; }
+	
+	/*** VIEWPORT ***/
+}
+
+@media all and (orientation: landscape) {}
+@media all and (orientation: portrait) {}
+/*** END MEDIA-QUERIES ***/
+
+/*** DECORATION ***/
+	/*** .d-snapPoints ***/
+	.d-snapPoints-grandParent,
+	.d-snapPoints-parent { width:100%; height: 100%; }
+	.d-snapPoints-parent { width: 400%; }
+	.d-snapPoints-grandParent {
+		overflow: auto;
+		
+		scroll-snap-type: mandatory;
+		-webkit-scroll-snap-type: mandatory;
+		-ms-scroll-snap-type: mandatory;
+		-o-scroll-snap-type: mandatory;
+		
+		scroll-snap-points-x: repeat(50%);
+		-webkit-scroll-snap-points-x: repeat(50%);
+		-ms-scroll-snap-points-x: repeat(50%);
+		-o-scroll-snap-points-x: repeat(50%);
+		
+		scroll-snap-type: x mandatory;
+		-webkit-scroll-snap-type: x mandatory;
+		-ms-scroll-snap-type: x mandatory;
+		-o-scroll-snap-type: x mandatory;
+	}
+	.d-snapPoints {
+		width: 25%; height: 100%;
+		float: left;
+//		border: 1px solid purple;
+		
+		scroll-snap-align: center;
+		-webkit-scroll-snap-align: center;
+		-ms-scroll-snap-align: center;
+		-o-scroll-snap-align: center;
+	}
+/*** END DECORATION ***/
+
+/*** TOOLS ***/
+	/*** .CSScentered ***/
+	.CSScentered {
+		display: flex;
+		align-items: center; justify-content: center;
+	}
+/*** END TOOLS ***/
+
+/*** CSS-HACKS ***/
+.thedress-gallery {// overflow: hidden; }
+/*** END CSS-HACKS ***/

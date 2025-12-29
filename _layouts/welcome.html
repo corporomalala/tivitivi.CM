@@ -1,0 +1,39 @@
+---
+layout: default
+---
+		<main>
+			<header class="header">
+				<nav class="header-nav">
+					<img src="/assets/images/logo_word_black.png" /><br />
+					<a href="https://instagram.com/MadamEllaMalala"></a>
+				</nav>
+
+				<figure class="header-figure">
+					<hgroup class="header-figure-hgroup">
+						<h1 class="header-figure-hgroup-h1"><span>House</span> <span>of</span> <span>Mother</span></h1>
+						<h2 class="header-figure-hgroup-h2">Madam Ella</h2>
+					</hgroup>
+					
+					<img src="/assets/images/madam-ella.png" class="header-figure-img" />
+				</figure>
+			</header>
+			<span class="d-spacer"></span>
+		
+			<section class="display">
+				<div class="display-gallery">{% for image in site.static_files %}{% if image.path contains "images/facebook" %}
+					<div class="display-gallery-grid nthChild-{{ i }} d-cssCentered"><figure class="display-gallery-grid-figure" style="background-image: url('{{ image.path }}');">
+						&uarr;
+						<!--
+						<img src="/assets/images/placeholder-1x1.png" />
+						-->
+					</figure></div>{% endif %}{% endfor %}
+				</div>
+				
+				<hgroup class="d-cssCentered"><h3>is she even real?</h3></hgroup>
+			</section>
+				<span class="u-cursor"></span>
+			
+			<footer>&copy; Copyrights 2025: <a>Babylon19</a>. All rights reserved.</footer>
+		</main>
+		
+		<script src="/assets/scripts/houseofmother-dot-babylon19-dot-org.js"></script>

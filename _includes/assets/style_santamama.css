@@ -1,0 +1,101 @@
+/*** CANCEL ***/
+html, body { width: 100%; height: 100%; }
+main { min-height: 100%; }
+/*** END CANCEL ***/
+
+/*** COLORS ***/{% assign vColorPurple = '#340853' %}
+ { background-color: {{ vColorPurple }}; }
+ { background-color: purple; }
+
+.calendar-block-box.is-green { background-color: green; }
+.calendar-block-box.is-gray { background-color: transparent; }
+.calendar-block-box.is-black { background-color: #181818; color: white; }
+.calendar-block-box.is-white { background-color: white; }
+.calendar-block-box.is-beige { background-color: #F5F1E8; }
+.calendar-block-box.is-red { background-color: #c22; }
+/*** END COLORS ***/
+
+/*** FONTS ***/
+* { font-family: "Impact"; word-spacing: .15em; }
+	 { letter-spacing: .1em; }
+ { font-family: "Bauhaus"; line-height: 1.15em; word-spacing: initial !important; }
+.CSSbrand { font-family: "The Rich Jullietta DEMO"; }
+
+.calendar-block:nth-child(1) .calendar-block-box.is-text { font-size: 5vw; }
+ 
+.calendar-block-box { text-align: center; }
+/*** END FONTS ***/
+
+/*** MEDIA ***/
+* { background-size: cover; }
+
+.calendar-block-box.is-deco { background-image: url("/assets/images/purple-creed.png"); }
+.calendar-block-box.is-deco {
+	background-size: auto 75% !important;
+	
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+main { background-image: url("/assets/images/purple-background.png"); }
+/*** END MEDIA ***/
+
+/*** COMPONENTS ***/
+	/*** COMMONS ***/
+
+	/*** .calendar ***/
+	.calendar-block { display: grid; }
+	.calendar-block { grid-template-columns: 33.333% 33.333% 33.333% ; }
+	.calendar-block { grid-template-rows: 33.333% 33.333% 33.333% ; }
+	
+	.calendar-block {
+//		aspect-ratio: 1/1;
+	}
+	.calendar-block-box {
+		aspect-ratio: 1/1;
+		display: block;
+	}
+		.calendar-block:nth-child(1) .calendar-block-box:nth-child(4) { grid-column-start: 1; grid-column-end: 3; aspect-ratio: initial !important; }
+		.calendar-block:nth-child(3) .calendar-block-box:nth-child(1) { grid-column-start: 1; grid-column-end: 3; grid-row-start: 1; grid-row-end: 3; aspect-ratio: initial !important; }
+		.calendar-block:nth-child(4) .calendar-block-box:nth-child(7) { grid-column-start: 1; grid-column-end: 3; aspect-ratio: initial !important; }
+/*** END COMPONENTS ***/
+
+/*** MEDIA-QUERIES ***/
+@media all and (max-width: 50em) {
+	/*** FONTS ***/
+	html { font-size: 16px; }
+	
+	/*** COMPONENTS: .calendar ***/
+	.calendar-block-box { padding: .5em; }
+}
+@media all and (min-width: 50em) {
+	/*** FONTS ***/
+	html { font-size: 19px; }
+	
+	/*** COMPONENTS: .calendar ***/
+	.calendar-block-box { padding: 1em; }
+	
+	/*** VIEWPORT: .calendar ***/
+	.calendar { grid-template-columns: 50% 50%; }
+	.calendar { grid-template-rows: 50% 50%; }
+	
+	/*** CSS-HACKS ***/
+	.calendar { display: grid !important; }
+	/*** END CSS-HACKS ***/
+/*** END MEDIA-QUERIES ***/
+
+/*** CSS TOOLS ***/
+	/*** .CSScentered ***/
+	.calendar-block-box,
+	.CSScentered {
+		display: flex;
+		align-items: center; justify-content: center;
+	}
+	
+	/*** .CSSmidwrap ***/
+	.CSSmidwrap {
+		max-width: 75em;
+		display: block;
+		margin: auto;
+	}
+/*** END CSS TOOLS ***/

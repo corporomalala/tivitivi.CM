@@ -1,0 +1,17 @@
+---
+---
+/*===
+#TiViTiVi by Corporo Malala
+Coryrights {{ site.time | split: '-' | first }} Into Binary. All rights reserved.
+Coded for https://tivitivi.corporomalala.online.
+===*/
+
+
+/*=== LIBRARIES ===*/
+/*=== END LIBRARIES ===*/
+
+/*=== CUSTOM ===*/
+	{% include assets/reset.css %}
+
+	{% include assets/style_thedress.css %}
+/*=== END CUSTOM ===*/
