@@ -1,5 +1,5 @@
 ---
-layout: thedress
+layout: welcome
 permalink: /
 ---
 AAA

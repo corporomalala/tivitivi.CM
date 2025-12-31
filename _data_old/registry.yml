@@ -1,0 +1,17 @@
+- "A":
+  - "Product Name A1":
+    - platform: "on"
+    - price: "R10"
+    - description: "free from chemicals and doesn't wash away"
+    - image: "purple-creed.png"
+  - "Product Name A2":
+    - platform: "on"
+    - price: "R10"
+    - description: "healthy natural roots, long beautiful tips"
+    - image: "purple-creed.png"
+- "B":
+  - "Product Name B1":
+    - platform: "on"
+    - price: "R10"
+    - description: "free from chemicals and doesn't wash away"
+    - image: "purple-creed.png"

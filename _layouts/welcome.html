@@ -1,39 +1,46 @@
 ---
 layout: default
 ---
-		<main>
+		<input type="checkbox" id="chbx4thedress" />
+		<main class="CSSmidwrap">
 			<header class="header">
-				<nav class="header-nav">
-					<img src="/assets/images/logo_word_black.png" /><br />
-					<a href="https://instagram.com/MadamEllaMalala"></a>
+				<nav class="CSScentered">
+					<img src="/assets/images/tivitivi-logo.png" />
+					<span class="CSSspacer"></span>
+					<div>
+						<a href="https://www.youtube.com/@TiViTiVi_ACM/" class="u-brandCTA" title="Open App">Watch on the Youtube Channel</a>
+						<br /><br />
+						<a class="u-brandCTA" title="SHOP COMING SOON!">Shop the Merch</a>
+					</div>
 				</nav>
-
-				<figure class="header-figure">
-					<hgroup class="header-figure-hgroup">
-						<h1 class="header-figure-hgroup-h1"><span>House</span> <span>of</span> <span>Mother</span></h1>
-						<h2 class="header-figure-hgroup-h2">Madam Ella</h2>
-					</hgroup>
-					
-					<img src="/assets/images/madam-ella.png" class="header-figure-img" />
-				</figure>
-			</header>
-			<span class="d-spacer"></span>
-		
-			<section class="display">
-				<div class="display-gallery">{% for image in site.static_files %}{% if image.path contains "images/facebook" %}
-					<div class="display-gallery-grid nthChild-{{ i }} d-cssCentered"><figure class="display-gallery-grid-figure" style="background-image: url('{{ image.path }}');">
-						&uarr;
-						<!--
-						<img src="/assets/images/placeholder-1x1.png" />
-						-->
-					</figure></div>{% endif %}{% endfor %}
-				</div>
 				
-				<hgroup class="d-cssCentered"><h3>is she even real?</h3></hgroup>
-			</section>
-				<span class="u-cursor"></span>
+				<p class="d-brandFont">Welcome to <br /><span class="u-brandCTA">TiViTiVi</span>, your daily dose of real people in real moments</p>
+			</header>
 			
-			<footer>&copy; Copyrights 2025: <a>Babylon19</a>. All rights reserved.</footer>
+			<section class="videos"><div class="videos_dock">{% for file in site.data.highlights %}{% for data in file %}
+				<!--<video preload="auto" controls><source src="/assets/videos/{% for content in data[0] %}{{ content }}{% endfor %}" type="video/mp4" /></video>-->
+				<figure>
+					<img src="/assets/images/placeholder-19x6.png" class="videos-placeholder">
+
+					<video class="CSScentered" preload="auto" controls><source src="/assets/videos/{% for content in data[0] %}{{ content }}{% endfor %}" type="video/mp4" /></video>
+				</figure>
+				{% endfor %}{% endfor %}
+			</div></section>
+			
+			<section class="cta CSScentered">
+				<label for="chbx4thedress" class="u-brandCTA">View "The Dress"</label>
+			</section>
+			
+			<section class="shop CSSmidwrap"><div class="shop_dock">
+				<div><label for="chbx4thedress">[close window]</label></div>
+				<figure class="CSScentered"><span></span></figure>
+				<div>
+					<div class="shop-gallery">
+						<img src="/assets/images/thedress_1.jpg" />
+						<img src="/assets/images/thedress_4.jpg" />
+					</div>
+					
+					<a href="https://www.fashionnova.com/products/amber-bandage-gown-orange" class="u-brandCTA" title="Go to FashionNova" target="_blank">Buy on FashionNova</a>
+				</div>
+			</div></section>
 		</main>
-		
-		<script src="/assets/scripts/houseofmother-dot-babylon19-dot-org.js"></script>

@@ -1,257 +1,201 @@
 /*** CANCEL ***/
-html, body { width: 100%; height: 100%; }
-main { min-height: 100%; }
-
-.u-cursor,
-.display hgroup { pointer-events: none; }
-.header-figure-hgroup-h2 { text-wrap: nowrap !important; }
+html, body, main { width: 100%; height: 100%; }
 /*** END CANCEL ***/
 
-/*** Z-INDEXES ***/
-.display-gallery { position: relative; z-index: 10; }
-.display hgroup { position: relative; z-index: 20; }
-.u-cursor { position: relative; z-index: 30; }
-/*** END Z-INDEXES ***/
+/*** COLORS ***/{% assign vColor = "DA301E" %}
+.u-brandCTA { background-color: #{{ vColor }}; }
 
-/*** COLORS ***/{% assign vColorPurple = '#340853' %}
- { background-color: {{ vColorPurple }}; }
- { background-color: purple; }
+label.u-brandCTA {// background-color: black; }
 
-.display-gallery-grid-figure { background-color: white; }
-.display h3,
-.header-figure-hgroup-h2 { color: white; }
-footer a:hover,
-footer a:active,
-footer a:focus {// color: white; }
+.u-brandCTA { color: white; }
 /*** END COLORS ***/
 
 /*** FONTS ***/
+@font-face { font-family: "CrackMan"; src: url("/assets/fonts/crackman.ttf"); }
+@font-face { font-family: "CrackMan Front"; src: url("/assets/fonts/crackman front.ttf"); }
+@font-face { font-family: "Impact"; src: url("/assets/fonts/impact.ttf"); }
+
 * { font-family: "Impact"; word-spacing: .15em; }
-	 { letter-spacing: .1em; }
-.display h3,
-.header-figure-hgroup-h1 span { font-family: "Bauhaus"; line-height: 1.15em; word-spacing: initial !important; }
-.header-figure-hgroup-h2 { font-family: "The Rich Jullietta DEMO"; }
+.d-brandFont, .d-brandFont * { font-family: "CrackMan Front"; }
 
- { font-size: 1.9em; }
- { font-size: 1em; }
- { font-size: .75em; }
+	 { letter-spacing: .1em; line-height: 1.15em; word-spacing: initial !important; }
 
-.header { text-align: center; }
-.header-nav { text-align: left; }
-.display-gallery-grid-figure, 
-footer { text-align: right; }
-footer a { text-decoration: underline; }
+.shop { text-align: center; }
+.header nav div,
+.header p { text-align: right; }
+a.u-brandCTA,
+label.u-brandCTA { text-decoration: underline; }
 /*** END FONTS ***/
 
 /*** MEDIA ***/
-* { background-size: cover; }
+* { background-size: cover; background-position: center; }
 
-main { background-image: url("/assets/images/purple-background.png"); }
-	main {
-//		background-position: fixed;
-	}
-
-.u-cursor { background-image: url("/assets/images/purple-creed.png"); }
-
-.header a { background-image: url("/assets/images/icon_instagram_black.png"); }
-.header a:hover,
-.header a:active,
-.header a:focus { background-image: url("/assets/images/icon_instagram_white.png"); }
-
-.display-gallery-grid-figure {
-	background-color: transparent !important;
-}
+.shop figure span { background-image: url("/assets/images/thedress.gif"); }
+.shop figure span { background-position: center -3em; }
 /*** END MEDIA ***/
 
 /*** UTILITIES ***/
-	/*** .u-cursor ***/
-	.u-cursor {
-		position: fixed;
-		min-width: 1em; aspect-ratio: 1/1;
-		transform: translate(-50%, -75%);
+	/*** .u-brandCTA ***/
+	.u-brandCTA {
+		padding: 0 .5em;
+		border-radius: 1.8em;
 	}
+		a.u-brandCTA,
+		label.u-brandCTA {
+			padding: .25em .75em;
+			margin: .25em;
+		}
 /*** END UTILITIES ***/
 
 /*** COMPONENTS ***/
 	/*** COMMONS ***/
-	main { display: flex; flex-direction: column; }
-	.d-spacer { flex: 1; }
-	
-	footer,
-	.header {
-		padding: 1em;
-	}
+	main { display: flex !important; }
+	main { flex-direction: column; }
+	.videos { flex: 1; }
 
-	/*** .display ***/
-	.display {
-		position: relative;
-	}
-	.display-gallery {
-		width: 100%;
-		display: grid;
-		padding: 0 .5em;
-	}
-	.display-gallery-grid {
-		padding: .5em .5em;
-	}
-	.display-gallery-grid-figure {
-		width: 100%; aspect-ratio: 1/1;
-//		max-height: 90%;
-		padding-right: .25em;
-	}
-	.display-gallery-grid-figure:hover,
-	.display-gallery-grid-figure:active,
-	.display-gallery-grid-figure:focus {
-		transform: scale(1.8);
-//		transform: scale(4);
+	video,
+	.shop img, .shop figure span { border-radius: 7.5px; overflow: hidden; }
+
+	/*** .header ***/
+	.header nav { display: flex; }
+	
+	.header nav img {
+		width: auto;
 	}
 	
-	.display hgroup {
-		position: absolute; top: 0; left: 0;
+	/*** .videos ***/
+	.videos { overflow-x: auto; padding: .3em; }
+	.videos_dock {
+		width: 100%; height: 100%;
+	}
+	.videos figure {
+		position: relative;
+		margin-right: 1em;
+	}
+	.videos figure, .videos img {
+		display: inline-block;
+		width: auto; height: 100%;
+	}
+		.videos video {
+			position: absolute; top: 0; left: 0;
+			width: auto; height: 100%;
+			
+			background-color: white;
+		}
+	
+	/*** .shop ***/
+	.shop_dock { display: flex; }
+	.shop_dock { flex-direction: column; }
+	.shop figure { flex: 1; }
+	
+	.shop {
+		position: fixed; top: 0; left: 0; right: 0;
+		width: 100%; height: 100%;
+	}
+	.shop figure span {
 		width: 100%; height: 100%;
 	}
 	
-	/*** .header ***/
-	.header-figure,
-	.header-figure-hgroup {
-		position: relative;
-		display: inline-block;
-	}
-	.header-figure-hgroup-h1 span:last-child {
-		position: relative; right: .5em;
-		display: block; text-align: right;
-	}
-	.header-figure-hgroup-h2 {
-		position: absolute; right: 1em;
-	}
-	
-	.header-figure-img {
-		position: absolute; top: 0;
-		width: auto; max-width: initial;
-	}
-	
-	.header a {
-		position: absolute; top: 1em; right: 1em;
-		aspect-ratio: 1/1;
+	.shop div img {
+		width: auto; height: 18vh;
 	}
 /*** END COMPONENTS ***/
 
 /*** INTERACTIVITY ***/
-.display-gallery-grid-figure { cursor: pointer; }
-.display {// cursor: none !important; }
-
-.u-cursor { visibility: hidden; }
-.display:hover ~ .u-cursor,
-.display:active ~ .u-cursor { visibility: visible; }
-
-.display-gallery-grid-figure {// color: transparent; }
-.display-gallery-grid-figure:hover {// color: purple; }
-
-.display:hover hgroup,
-.display:active hgroup,
-.display:focus hgroup { display: none; }
+label { cursor: pointer; }
 /*** END INTERACTIVITY ***/
 
 /*** MEDIA-QUERIES ***/
 @media all and (max-width: 50em) {
 	/*** FONTS ***/
-	html { font-size: 16px; }
-	.display h3,
-	.header-figure-hgroup-h1 { font-size: 7vw; }
-	.header-figure-hgroup-h2 { font-size: 5vw; }
+	html { font-size: 14px; }
+	.header p { font-size: 1.8em; }
 	
 	/*** COMMONS ***/
-	.d-spacer {
-		min-height: 1.8em;
-	}
-	
-	/*** UTILITIES: .u-cursor ***/
-	.u-cursor { height: 35vw; }
-	
-	/*** COMPONENTS: .display ***/
-	.display hgroup {// align-items: flex-start !important; }
-	
-	.display-gallery {
-		grid-template-columns: {% for i in (1..3) %}33.333% {% endfor %};
-	}
+	main,
+	.shop { padding: 1em; }
 	
 	/*** COMPONENTS: .header ***/
-	.header a { width: 1em; }
-	.header-nav img { width: auto; height: 7vw; max-height: 1.8em; }
+	.header nav img { height: 3em; }
+		.header p {// margin-left: 1em; }
 	
-	.header { min-height: 40vw; }
-	.header-figure { left: -2.5em; }
-	.header-figure-img { left: 80%; height: 60vw !important; }
-	.header-figure-hgroup-h2 {
-		right: initial; left: 0; bottom: 0;
-	}
+	.header p { padding: 1em 0; }
+	
+	/*** COMPONENTS: .shop ***/
+	.shop_dock { width: 100%; height: 100%; }
+	.shop figure { padding: 1em 1em 3em 1em; }
+	
+	/*** INTERACTIVITY ***/
+	.shop { display: none !important; }
+	#chbx4thedress:checked ~ main .shop { display: block !important; }
+	
+	/*** VIEWPORT ***/
+	.videos_dock { width: 190%; width: 100vh; }
+	.header nav { align-items: flex-start !important; }
+	.header nav div { padding-top: .5em; }
+	.header a { display: inline !important; }
+	.header p { text-align: center; }
+	.videos_dock { padding-bottom: 3em; }
+	
+	.cta { padding: 2.5em 0 1em 0; }
+	
+	.shop { background-color: white; }
 }
 @media all and (min-width: 50em) {
 	/*** FONTS ***/
-	html { font-size: 19px; }
-	.display h3 { font-size: 3em; }
-	.header-figure-hgroup-h1 { font-size: 7em; }
-	.header-figure-hgroup-h2 { font-size: 5em; }
+	html { font-size: 18px; }
+	.header p { font-size: 3em; }
 	
-	/*** UTILITIES: .u-cursor ***/
-	.u-cursor { height: 18vw; }
-	
-	/*** COMPONENTS: .display ***/
-	.display-gallery {
-//		grid-template-columns: {% for i in (1..16) %}6.25% {% endfor %};
-		grid-template-columns: {% for i in (1..6) %}16.666% {% endfor %};
-//		grid-template-columns: {% for i in (1..12) %}8.333% {% endfor %};
-	}
+	/*** COMMONS ***/
+	main,
+	.shop { padding: 1em .5em .5em .5em; }
 	
 	/*** COMPONENTS: .header ***/
-	.header a { width: 1.9em; }
-	.header-nav img { width: auto; height: 1.8em; }
+	.header nav img { height: 4em; }
+		.header p { margin-left: 4em; }
 	
-	.header { min-height: 70vh; }
-	.header-figure { left: -5em; }
-	.header-figure-img { left: 90%; height: 100vh !important; }
-	.header-figure-hgroup-h2 { bottom: .25em; }
+	.header p { padding: .5em 0; }
+		
+	/*** COMPONENTS: .shop ***/
+	.shop figure { padding: .25em 0 3em 3em; }
+	
+	/*** VIEWPORT ***/
+	.shop label { display: none !important; }
+	.header nav div > br:nth-child(1),
+	.header nav div > br:nth-child(2) { display: none; }
+	.header img { padding-left: 1.8em; }
+	
+	.header,
+	.videos { width: 70%; }
+	
+	.shop_dock {
+		position: relative; left: 70%;
+		width: 30%; height: 100%;
+	}
+	.shop_dock > div { margin-left: 3em; }
+	main,
+	.shop { padding-right: 1em; }
+	
+	.cta { display: none !important; }
 }
 
 @media all and (orientation: landscape) {}
 @media all and (orientation: portrait) {}
 /*** END MEDIA-QUERIES ***/
 
-/*** DECORATION ***/
-	/*** .d-cssCentered ***/
-	.d-cssCentered {
+/*** TOOLS ***/
+	/*** .CSScentered ***/
+	.CSScentered {
 		display: flex;
 		align-items: center; justify-content: center;
 	}
 	
-	/*** .d-midWrap ***/
-	.d-midWrap {
+	/*** .CSSmidwrap ***/
+	.CSSmidwrap {
 		max-width: 75em;
-		display: block;
-		margin: auto;
+		display: block; margin: auto;
 	}
-/*** END DECORATION ***/
-
-/*** CSS HACKS ***/
-html { overflow-x: hidden; }
-
-/*
-// Cropping the Body
-.header {
-	position: relative;
-	overflow-y: hidden;
-}
-.display-gallery-grid {
-	padding-top: 0; padding-bottom: 1em;
-}
-*/
-/*** END CSS HACKS ***/
-
-/*** SANDBOX ***/
-.u-cursor { opacity: .7; }
-
-.header-figure-img {// filter: grayscale(100%); }
-
-.display-gallery-grid:nth-child(even) .display-gallery-grid-figure {// background-color: purple; }
-.display-gallery-grid:nth-child(odd) .display-gallery-grid-figure {// background-color: green; }
-/*** END SANDBOX ***/
+	
+	/*** .CSSspacer ***/
+	.CSSspacer { flex: 1; }
+/*** END TOOLS ***/
