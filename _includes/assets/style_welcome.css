@@ -4,7 +4,6 @@ html, body, main { width: 100%; height: 100%; }
 
 /*** Z-INDEXES ***/
 video { position: relative; z-index: 10; }
-.shop { position: relative; z-index: 18; }
 /*** END Z-INDEXES ***/
 
 /*** COLORS ***/{% assign vColor = "DA301E" %}
@@ -145,6 +144,8 @@ label { cursor: pointer; }
 	.cta { padding: 2.5em 0 1em 0; }
 	
 	.shop { background-color: white; }
+	
+	.shop { z-index: 18; }
 }
 @media all and (min-width: 50em) {
 	/*** FONTS ***/
