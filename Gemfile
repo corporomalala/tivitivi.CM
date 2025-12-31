@@ -33,6 +33,7 @@ gem "base64"
 gem "stringio"
 gem "bigdecimal"
 gem "date"
+gem "stringio", "~> 3.1"
 
 # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
 # do not have a Java counterpart.
