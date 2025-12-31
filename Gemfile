@@ -30,7 +30,6 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 gem "rake"
 gem "csv"
 gem "base64"
-gem "stringio"
 gem "bigdecimal"
 gem "date"
 gem "stringio", "~> 3.1"
