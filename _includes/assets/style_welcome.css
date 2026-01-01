@@ -59,7 +59,13 @@ label.u-brandCTA { text-decoration: underline; }
 	.videos { flex: 1; }
 
 	video,
+	.videos_dock div img,
 	.shop img, .shop figure span { border-radius: 7.5px; overflow: hidden; }
+	
+	.videos_dock div img,
+	.shop div img {
+		width: auto; height: 18vh;
+	}
 
 	/*** .header ***/
 	.header nav { display: flex; }
@@ -69,7 +75,7 @@ label.u-brandCTA { text-decoration: underline; }
 	}
 	
 	/*** .videos ***/
-	.videos { overflow-x: auto; padding: .3em; }
+	.videos { overflow-x: auto; padding: .75em 0 .75em .5em; }
 	.videos_dock {
 		width: 100%; height: 100%;
 	}
@@ -88,6 +94,10 @@ label.u-brandCTA { text-decoration: underline; }
 			background-color: white;
 		}
 	
+	.videos_dock div {
+		display: inline-block;
+	}
+	
 	/*** .shop ***/
 	.shop_dock { display: flex; }
 	.shop_dock { flex-direction: column; }
@@ -99,10 +109,6 @@ label.u-brandCTA { text-decoration: underline; }
 	}
 	.shop figure span {
 		width: 100%; height: 100%;
-	}
-	
-	.shop div img {
-		width: auto; height: 18vh;
 	}
 /*** END COMPONENTS ***/
 
@@ -135,7 +141,7 @@ label { cursor: pointer; }
 	#chbx4thedress:checked ~ main .shop { display: block !important; }
 	
 	/*** VIEWPORT ***/
-	.videos_dock { width: 190%; width: 100vh; }
+	.videos_dock { width: 180%; width: 118vh; }
 	.header nav { align-items: flex-start !important; }
 	.header nav div { padding-top: .5em; }
 	.header a { display: inline !important; }
@@ -180,11 +186,14 @@ label { cursor: pointer; }
 	.shop_dock > div { margin-left: 3em; }
 	main,
 	.shop { padding-right: 1em; }
+	.shop { padding-bottom: 1em; }
 	
 	.cta { display: none !important; }
 	
 	a, label,
 	video { position: relative; z-index: 30; }
+	
+	.videos a { position: relative; top: -0.4em; }
 }
 
 @media all and (orientation: landscape) {}
