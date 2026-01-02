@@ -86,7 +86,7 @@ label.u-brandCTA { text-decoration: underline; }
 	.tv-videos figure {
 		position: relative;
 		margin-right: 1em;
-		background-color: green;
+//		background-color: green;
 	}
 	.tv-videos figure video {
 		position: absolute; bottom: 0; left: 0;
@@ -215,8 +215,6 @@ label { cursor: pointer; }
 	
 	/*** COMPONENTS: .tv ***/
 	.tv-ad { flex: 1; }
-	
-	.tv_dock { width: 50%; }
 	/*
 	.tv-videos figure video {
 		width: auto; height: 100%;
@@ -257,17 +255,12 @@ label { cursor: pointer; }
 	.videos a { position: relative; top: -0.4em; }
 }
 
-@media all and (min-width: 100em) {
-	/*** VIEWPORT ***/
-	.videos figure { max-height: 18em; }
-	.shop { padding-bottom: 5em; }
-	
-	/*** TOOLS ***/
-	.CSSspacer { flex: 1 !important; }
+@media (min-width: 50em) and (max-height: 800px) {
+	.tv_dock { width: 50%; }
 }
-
-@media all and (orientation: landscape) {}
-@media all and (orientation: portrait) {}
+@media (min-width: 50em) and (min-height: 800px) {
+	.tv_dock { width: 70%; }
+}
 /*** END MEDIA-QUERIES ***/
 
 /*** TOOLS ***/
