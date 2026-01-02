@@ -26,8 +26,7 @@ label.u-brandCTA {// background-color: black; }
 	 { letter-spacing: .1em; line-height: 1.15em; word-spacing: initial !important; }
 
 .shop { text-align: center; }
-.header nav div,
-.header p { text-align: right; }
+.header nav div { text-align: right; }
 a.u-brandCTA,
 label.u-brandCTA { text-decoration: underline; }
 /*** END FONTS ***/
@@ -82,7 +81,6 @@ label.u-brandCTA { text-decoration: underline; }
 	/*** .tv ***/
 	.tv_dock,
 	.tv-videos { display: flex; }
-	.tv_dock { width: 150%; }
 	
 	.tv { overflow-x: scroll; }
 	.tv-videos figure {
@@ -92,7 +90,6 @@ label.u-brandCTA { text-decoration: underline; }
 	}
 	.tv-videos figure video {
 		position: absolute; bottom: 0; left: 0;
-		width: 100%; height: auto;
 	}
 	
 	/*** .videos ***/
@@ -159,6 +156,11 @@ label { cursor: pointer; }
 	.shop_dock { width: 100%; height: 100%; }
 	.shop figure { padding: 1em 1em 3em 1em; }
 	
+	/*** COMPONENTS: .tv ***/
+	.tv-videos figure video {
+		width: 100%; height: auto;
+	}
+	
 	/*** COMPONENTS: .videos ***/
 	.videos {
 		background-color: green;
@@ -169,6 +171,8 @@ label { cursor: pointer; }
 	#chbx4thedress:checked ~ main .shop { display: block !important; }
 	
 	/*** VIEWPORT ***/
+	.tv_dock { width: 150%; }
+	
 	/*
 	.videos_dock { width: 180%; width: 118vh; } */
 	.header nav { align-items: flex-start !important; }
@@ -193,6 +197,8 @@ label { cursor: pointer; }
 	/*** FONTS ***/
 	html { font-size: 18px; }
 	.header p { font-size: 3em; }
+
+	.header p { text-align: right; }
 	
 	/*** COMMONS ***/
 	main,
@@ -207,13 +213,31 @@ label { cursor: pointer; }
 	/*** COMPONENTS: .shop ***/
 	.shop figure { padding: .25em 0 3em 3em; }
 	
+	/*** COMPONENTS: .tv ***/
+	.tv-ad { flex: 1; }
+	
+	.tv_dock { width: 50%; }
+	/*
+	.tv-videos figure video {
+		width: auto; height: 100%;
+	}
+	*/
+	
+	
+	.tv-videos {
+		background-color: green;
+	}
+
 	/*** VIEWPORT ***/
+	.tv-videos figure img {// max-height: 10em; }
+	
 	.shop label { display: none !important; }
 	.header nav div > br:nth-child(1),
 	.header nav div > br:nth-child(2) { display: none; }
 	.header img { padding-left: 1.8em; }
 	
 	.header,
+	.tv,
 	.videos { width: 70%; }
 	
 	.shop_dock {
