@@ -266,7 +266,7 @@ label { cursor: pointer; }
 }
 
 @media (max-width: 60em) and (max-height: 800px) {
-	.header p { font-size: 1.8em; }
+	.header p {// font-size: 1.8em; }
 	.tv_dock { width: 50%; }
 }
 @media (min-width: 60em) and (min-height: 800px) {
