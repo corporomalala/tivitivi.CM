@@ -6,7 +6,6 @@ layout: default
 			<header class="header">
 				<nav class="CSScentered">
 					<img src="/assets/images/tivitivi-logo.png" />
-					<span class="CSSspacer"></span>
 					<div>
 						<a href="https://www.youtube.com/@TiViTiVi_ACM/" class="u-brandCTA" title="Open App">Watch on the Youtube Channel</a>
 						<br /><br />
@@ -14,8 +13,20 @@ layout: default
 					</div>
 				</nav>
 				
-				<p class="d-brandFont">Welcome to <br /><span class="u-brandCTA">TiViTiVi</span>, your daily dose of real people in real moments</p>
+				<p class="CSScentered d-brandFont">Welcome to <br /><span class="u-brandCTA">TiViTiVi</span>, your daily dose of real people in real moments</p>
 			</header>
+			
+			<section class="tv"><div class="tv_dock">
+				<div class="tv-videos">{% for file in site.data.highlights %}{% for data in file %}
+					<figure>
+						<img src="/assets/images/placeholder-19x6.png" />
+						
+						<video preload="auto" controls><source src="/assets/videos/{% for content in data[0] %}{{ content }}{% endfor %}" type="video/mp4" /></video>
+					</figure>
+				{% endfor %}{% endfor %}
+				</div>
+				<div>Buy</div>
+			</div></section>
 			
 			<section class="videos"><div class="videos_dock">{% for file in site.data.highlights %}{% for data in file %}
 				<!--<video preload="auto" controls><source src="/assets/videos/{% for content in data[0] %}{{ content }}{% endfor %}" type="video/mp4" /></video>-->

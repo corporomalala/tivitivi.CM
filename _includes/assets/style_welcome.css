@@ -56,7 +56,7 @@ label.u-brandCTA { text-decoration: underline; }
 	/*** COMMONS ***/
 	main { display: flex !important; }
 	main { flex-direction: column; }
-	.videos { flex: 1; }
+	.header { flex: 1; }
 
 	video,
 	.videos_dock div img,
@@ -66,15 +66,38 @@ label.u-brandCTA { text-decoration: underline; }
 	.shop div img {
 		width: auto; height: 18vh;
 	}
-
-	/*** .header ***/
-	.header nav { display: flex; }
 	
+	/*** .header ***/
+	.header,
+	.header nav { display: flex; }
+	.header,
+	.header p { flex-direction: column; }
+	.header nav div,
+	.header p { flex: 1; }
+
 	.header nav img {
 		width: auto;
 	}
 	
+	/*** .tv ***/
+	.tv_dock,
+	.tv-videos { display: flex; }
+	.tv_dock { width: 150%; }
+	
+	.tv { overflow-x: scroll; }
+	.tv-videos figure {
+		position: relative;
+		margin-right: 1em;
+//		background-color: green;
+	}
+	.tv-videos figure video {
+		position: absolute; bottom: 0; left: 0;
+		width: 100%; height: auto;
+	}
+	
 	/*** .videos ***/
+	.videos { display: none; }
+	
 	.videos { overflow-x: auto; padding: .75em 0 .75em .5em; }
 	.videos_dock {
 		width: 100%; height: 100%;
@@ -136,12 +159,18 @@ label { cursor: pointer; }
 	.shop_dock { width: 100%; height: 100%; }
 	.shop figure { padding: 1em 1em 3em 1em; }
 	
+	/*** COMPONENTS: .videos ***/
+	.videos {
+		background-color: green;
+	}
+	
 	/*** INTERACTIVITY ***/
 	.shop { display: none !important; }
 	#chbx4thedress:checked ~ main .shop { display: block !important; }
 	
 	/*** VIEWPORT ***/
-	.videos_dock { width: 180%; width: 118vh; }
+	/*
+	.videos_dock { width: 180%; width: 118vh; } */
 	.header nav { align-items: flex-start !important; }
 	.header nav div { padding-top: .5em; }
 	.header a { display: inline !important; }
@@ -151,6 +180,14 @@ label { cursor: pointer; }
 	.cta { padding: 2.5em 0 1em 0; }
 	
 	.shop { background-color: white; }
+	
+	
+	/*** VIEWPORT ***/
+	.videos figure { max-height: 10em; }
+	.shop {// padding-bottom: 5em; }
+	
+	/*** TOOLS ***/
+	.CSSspacer {// flex: 1 !important; }
 }
 @media all and (min-width: 50em) {
 	/*** FONTS ***/
@@ -163,7 +200,7 @@ label { cursor: pointer; }
 	
 	/*** COMPONENTS: .header ***/
 	.header nav img { height: 4em; }
-		.header p { margin-left: 4em; }
+		.header p { margin-left: 0em; }
 	
 	.header p { padding: .5em 0; }
 		
@@ -196,6 +233,15 @@ label { cursor: pointer; }
 	.videos a { position: relative; top: -0.4em; }
 }
 
+@media all and (min-width: 100em) {
+	/*** VIEWPORT ***/
+	.videos figure { max-height: 18em; }
+	.shop { padding-bottom: 5em; }
+	
+	/*** TOOLS ***/
+	.CSSspacer { flex: 1 !important; }
+}
+
 @media all and (orientation: landscape) {}
 @media all and (orientation: portrait) {}
 /*** END MEDIA-QUERIES ***/
@@ -212,7 +258,4 @@ label { cursor: pointer; }
 		max-width: 75em;
 		display: block; margin: auto;
 	}
-	
-	/*** .CSSspacer ***/
-	.CSSspacer { flex: 1; }
 /*** END TOOLS ***/
