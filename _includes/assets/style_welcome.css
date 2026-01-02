@@ -41,6 +41,7 @@ label.u-brandCTA { text-decoration: underline; }
 /*** UTILITIES ***/
 	/*** .u-brandCTA ***/
 	.u-brandCTA {
+		display: inline !important;
 		padding: 0 .5em;
 		border-radius: 1.8em;
 	}
@@ -57,13 +58,15 @@ label.u-brandCTA { text-decoration: underline; }
 	main { flex-direction: column; }
 	.header { flex: 1; }
 
+	.tv-ads img,
 	video,
 	.videos_dock div img,
 	.shop img, .shop figure span { border-radius: 7.5px; overflow: hidden; }
 	
+	.tv-ads img,
 	.videos_dock div img,
 	.shop div img {
-		width: auto; height: 18vh;
+		width: auto; height: 18vh; height: 10em;
 	}
 	
 	/*** .header ***/
@@ -81,8 +84,11 @@ label.u-brandCTA { text-decoration: underline; }
 	/*** .tv ***/
 	.tv_dock,
 	.tv-videos { display: flex; }
+	.tv_dock { align-items: flex-end; }
 	
-	.tv { overflow-x: scroll; }
+	.tv { overflow-x: auto; }
+	.tv-ads {
+	}
 	.tv-videos figure {
 		position: relative;
 		margin-right: 1em;
@@ -214,19 +220,20 @@ label { cursor: pointer; }
 	.shop figure { padding: .25em 0 3em 3em; }
 	
 	/*** COMPONENTS: .tv ***/
-	.tv-ad { flex: 1; }
+	.tv-ads { flex: 1; }
+	
 	/*
-	.tv-videos figure video {
-		width: auto; height: 100%;
-	}
+	.tv-ads { position: relative; }
+	.tv-ads_dock { position: absolute; bottom: 0; left: 0; }
 	*/
 	
 	
 	.tv-videos {
-		background-color: green;
+//		background-color: green;
 	}
 
 	/*** VIEWPORT ***/
+	.tv {// padding-bottom: .5em; }
 	.tv-videos figure img {// max-height: 10em; }
 	
 	.shop label { display: none !important; }
@@ -274,5 +281,11 @@ label { cursor: pointer; }
 	.CSSmidwrap {
 		max-width: 75em;
 		display: block; margin: auto;
+	}
+	
+	/*** .CSSnoWrap ***/
+	.CSSnoWrap {
+		white-space: nowrap;
+		word-break: keep-all;
 	}
 /*** END TOOLS ***/
