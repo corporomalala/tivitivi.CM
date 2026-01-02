@@ -2,10 +2,9 @@
 html, body, main { width: 100%; height: 100%; }
 /*** END CANCEL ***/
 
-/*** Z-INDEXES ***/
-video { position: relative; z-index: 10; }
-.shop { position: relative; z-index: 18; }
-/*** END Z-INDEXES ***/
+/**** Z-INDEXES ***/
+.tv, .shop { position: relative; }
+/**** Z-INDEXES ***/
 
 /*** COLORS ***/{% assign vColor = "DA301E" %}
 .u-brandCTA { background-color: #{{ vColor }}; }
@@ -41,7 +40,6 @@ label.u-brandCTA { text-decoration: underline; }
 /*** UTILITIES ***/
 	/*** .u-brandCTA ***/
 	.u-brandCTA {
-		display: inline !important;
 		padding: 0 .5em;
 		border-radius: 1.8em;
 	}
@@ -143,7 +141,11 @@ label { cursor: pointer; }
 /*** END INTERACTIVITY ***/
 
 /*** MEDIA-QUERIES ***/
-@media all and (max-width: 50em) {
+@media all and (max-width: 60em) {
+	/*** Z-INDEXES ***/
+	.tv { z-index: 10; }
+	.shop { z-index: 18; }
+
 	/*** FONTS ***/
 	html { font-size: 14px; }
 	.header p { font-size: 1.8em; }
@@ -174,7 +176,7 @@ label { cursor: pointer; }
 	
 	/*** INTERACTIVITY ***/
 	.shop { display: none !important; }
-	#chbx4thedress:checked ~ main .shop { display: block !important; }
+	#chbx4thedress:checked ~ main .shop { display: block !important; z-index: 100; }
 	
 	/*** VIEWPORT ***/
 	.tv_dock { width: 150%; }
@@ -199,7 +201,11 @@ label { cursor: pointer; }
 	/*** TOOLS ***/
 	.CSSspacer {// flex: 1 !important; }
 }
-@media all and (min-width: 50em) {
+@media all and (min-width: 60em) {
+/*** Z-INDEXES ***/
+	.shop { z-index: 10; }
+	.tv { z-index: 18; }
+	
 	/*** FONTS ***/
 	html { font-size: 18px; }
 	.header p { font-size: 3em; }
@@ -256,16 +262,14 @@ label { cursor: pointer; }
 	
 	.cta { display: none !important; }
 	
-	a, label,
-	video { position: relative; z-index: 30; }
-	
 	.videos a { position: relative; top: -0.4em; }
 }
 
-@media (min-width: 50em) and (max-height: 800px) {
+@media (max-width: 60em) and (max-height: 800px) {
+	.header p { font-size: 1.8em; }
 	.tv_dock { width: 50%; }
 }
-@media (min-width: 50em) and (min-height: 800px) {
+@media (min-width: 60em) and (min-height: 800px) {
 	.tv_dock { width: 70%; }
 }
 /*** END MEDIA-QUERIES ***/
