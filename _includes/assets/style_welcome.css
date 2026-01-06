@@ -35,7 +35,8 @@ label.u-brandCTA { text-decoration: underline; }
 /*** MEDIA ***/
 * { background-size: cover; background-position: center; }
 
-.shop figure span { background-image: url("/assets/images/thedress.gif"); }
+.shop figure span { background-image: url("/assets/images/theorangedress.gif"); }
+.shop figure span { background-image: url("/assets/images/thepurpledress.gif"); }
 .shop figure span { background-position: center -3em; }
 /*** END MEDIA ***/
 
