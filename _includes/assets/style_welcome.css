@@ -50,6 +50,12 @@ label.u-brandCTA { text-decoration: underline; }
 			padding: .25em .75em;
 			margin: .25em;
 		}
+	
+	/*** .u-btnLANG ***/
+		@keyframes twinkle {
+			from { transform: scale(1.18); }
+			to { transform: scale(1); }
+		}
 /*** END UTILITIES ***/
 
 /*** COMPONENTS ***/
@@ -199,6 +205,9 @@ label { cursor: pointer; }
 	/*** VIEWPORT ***/
 	.videos figure { max-height: 10em; }
 	.shop {// padding-bottom: 5em; }
+	.u-btnLANG.u-brandCTA {
+		background-color: #AAA;
+	}
 	
 	/*** TOOLS ***/
 	.CSSspacer {// flex: 1 !important; }
@@ -246,9 +255,9 @@ label { cursor: pointer; }
 	.tv {// padding-bottom: .5em; }
 	.tv-videos figure img {// max-height: 10em; }
 	
-	.shop label { display: none !important; }
-	.header nav div > br:nth-child(1),
-	.header nav div > br:nth-child(2) { display: none; }
+	.shop label { display: none !important; }{% for i in (1..5) %}
+	.header nav div > br:nth-child({{ i }}),{% endfor %}
+	.jekyllPlaceholderClassname { display: none !important; }
 	.header img { padding-left: 1.8em; }
 	
 	.header,
@@ -267,6 +276,12 @@ label { cursor: pointer; }
 	.cta { display: none !important; }
 	
 	.videos a { position: relative; top: -0.4em; }
+	
+	
+	.u-btnLANG {
+		position: absolute; top: 1em; right: 1em;
+		animation: twinkle 1s infinite;
+	}
 }
 
 @media (max-width: 60em) and (max-height: 800px) {
