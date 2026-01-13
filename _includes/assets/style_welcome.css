@@ -1,5 +1,5 @@
 /*** CANCEL ***/
-html, body, main { width: 100%; height: 100%; }
+html, body { width: 100%; height: 100%; }
 /*** END CANCEL ***/
 
 /**** Z-INDEXES ***/
@@ -66,11 +66,9 @@ label.u-brandCTA { text-decoration: underline; }
 
 	.tv-ads img,
 	video,
-	.videos_dock div img,
 	.shop img, .shop figure span { border-radius: 7.5px; overflow: hidden; }
 	
 	.tv-ads img,
-	.videos_dock div img,
 	.shop div img {
 		width: auto; height: 18vh; height: 10em;
 	}
@@ -87,6 +85,10 @@ label.u-brandCTA { text-decoration: underline; }
 		width: auto;
 	}
 	
+	/*** .new ***/
+	.new { margin-top: 3em; }
+	.new video { width: 100%; height: auto; }
+	
 	/*** .tv ***/
 	.tv_dock,
 	.tv-videos { display: flex; }
@@ -102,32 +104,6 @@ label.u-brandCTA { text-decoration: underline; }
 	}
 	.tv-videos figure video {
 		position: absolute; bottom: 0; left: 0;
-	}
-	
-	/*** .videos ***/
-	.videos { display: none; }
-	
-	.videos { overflow-x: auto; padding: .75em 0 .75em .5em; }
-	.videos_dock {
-		width: 100%; height: 100%;
-	}
-	.videos figure {
-		position: relative;
-		margin-right: 1em;
-	}
-	.videos figure, .videos img {
-		display: inline-block;
-		width: auto; height: 100%;
-	}
-		.videos video {
-			position: absolute; top: 0; left: 0;
-			width: auto; height: 100%;
-			
-			background-color: white;
-		}
-	
-	.videos_dock div {
-		display: inline-block;
 	}
 	
 	/*** .shop ***/
@@ -161,6 +137,9 @@ label { cursor: pointer; }
 	/*** COMMONS ***/
 	main,
 	.shop { padding: 1em; }
+	.header,
+	.new,
+	.tv { width: 100%; }
 	
 	/*** COMPONENTS: .header ***/
 	.header nav img { height: 3em; }
@@ -177,32 +156,25 @@ label { cursor: pointer; }
 		width: 100%; height: auto;
 	}
 	
-	/*** COMPONENTS: .videos ***/
-	.videos {
-		background-color: green;
-	}
-	
 	/*** INTERACTIVITY ***/
 	.shop { display: none !important; }
 	#chbx4thedress:checked ~ main .shop { display: block !important; z-index: 100; }
 	
 	/*** VIEWPORT ***/
-	.tv_dock { width: 150%; }
+	.tv { overflow-x: scroll; }
+	.tv_dock {// width: 400%; }
+	.tv-videos figure { width: 60vw; }
 	
-	/*
-	.videos_dock { width: 180%; width: 118vh; } */
 	.header nav { align-items: flex-start !important; }
 	.header nav div { padding-top: .5em; }
 	.header a { display: inline !important; }
 	.header p { text-align: center; }
-	.videos_dock { padding-bottom: 3em; }
 	
 	.cta { padding: 2.5em 0 1em 0; }
 	
 	.shop { background-color: white; }
 	
 	/*** VIEWPORT ***/
-	.videos figure { max-height: 10em; }
 	.shop {// padding-bottom: 5em; }
 	.u-btnLANG.u-brandCTA {
 		background-color: #AAA;
@@ -228,6 +200,9 @@ label { cursor: pointer; }
 	/*** COMMONS ***/
 	main,
 	.shop { padding: 1em .5em .5em .5em; }
+	.header,
+	.new,
+	.tv { width: 70%; }
 	
 	/*** COMPONENTS: .header ***/
 	.header nav img { height: 4em; }
@@ -260,10 +235,6 @@ label { cursor: pointer; }
 	.jekyllPlaceholderClassname { display: none !important; }
 	.header img { padding-left: 1.8em; }
 	
-	.header,
-	.tv,
-	.videos { width: 70%; }
-	
 	.shop_dock {
 		position: relative; left: 70%;
 		width: 30%; height: 100%;
@@ -274,10 +245,7 @@ label { cursor: pointer; }
 	.shop { padding-bottom: 1em; }
 	
 	.cta { display: none !important; }
-	
-	.videos a { position: relative; top: -0.4em; }
-	
-	
+		
 	.u-btnLANG {
 		position: absolute; top: 1em; right: 1em;
 		animation: twinkle 1s infinite;
@@ -286,10 +254,10 @@ label { cursor: pointer; }
 
 @media (max-width: 60em) and (max-height: 800px) {
 	.header p {// font-size: 1.8em; }
-	.tv_dock { width: 50%; }
+	.tv_dock {// width: 50%; }
 }
 @media (min-width: 60em) and (min-height: 800px) {
-	.tv_dock { width: 70%; }
+	.tv_dock {// width: 70%; }
 }
 /*** END MEDIA-QUERIES ***/
 
