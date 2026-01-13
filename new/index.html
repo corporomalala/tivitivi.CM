@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Player with Products</title>
+<style>
+  body {
+    font-family: sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .video-container {
+    position: relative;
+    width: 640px;
+  }
+
+  video {
+    width: 100%;
+    display: block;
+  }
+
+  .product {
+    position: absolute;
+    top: 18%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 165, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: none;
+    pointer-events: none;
+    font-weight: bold;
+  }
+
+  .product.is-visible {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<div class="video-container">
+  <video id="myVideo" controls preload="auto">
+    <source src="/new/video.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <div id="product1" class="product">Product 1</div>
+  <div id="product2" class="product">Product 2</div>
+</div>
+
+<script>
+  // --- Product popup logic ---
+  const products = [
+    { time: "00:00:03", element: document.getElementById("product1") },
+    { time: "00:00:06", element: document.getElementById("product2") }
+  ];
+
+  function timeToSeconds(time) {
+    const [h, m, s] = time.split(":").map(Number);
+    return h * 3600 + m * 60 + s;
+  }
+
+  const video = document.getElementById("myVideo");
+
+  video.addEventListener("timeupdate", () => {
+    const currentTime = video.currentTime;
+    products.forEach(p => {
+      const targetTime = timeToSeconds(p.time);
+      if (currentTime >= targetTime && currentTime < targetTime + 1) {
+        p.element.classList.add("is-visible");
+      } else {
+        p.element.classList.remove("is-visible");
+      }
+    });
+  });
+
+  // --- Service Worker registration ---
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker registered', reg))
+      .catch(err => console.error('Service Worker registration failed', err));
+  }
+</script>
+
+</body>
+</html>

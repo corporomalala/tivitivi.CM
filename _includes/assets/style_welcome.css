@@ -201,13 +201,13 @@ label { cursor: pointer; }
 	
 	.shop { background-color: white; }
 	
-	
 	/*** VIEWPORT ***/
 	.videos figure { max-height: 10em; }
 	.shop {// padding-bottom: 5em; }
 	.u-btnLANG.u-brandCTA {
 		background-color: #AAA;
 	}
+	.u-btnLANG { display: none !important; }
 	
 	/*** TOOLS ***/
 	.CSSspacer {// flex: 1 !important; }
