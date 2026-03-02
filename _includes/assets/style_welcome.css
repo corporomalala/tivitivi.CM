@@ -72,6 +72,14 @@ label.u-brandCTA { text-decoration: underline; }
 	.shop div img {
 		width: auto; height: 18vh; height: 10em;
 	}
+
+	/*** .alert ***/
+	.alert {
+		position: fixed; top: 0; left: 0; z-index: 100;
+		width: 100%; height: 100%;
+		
+		background-color: rgba(255, 255, 255, .9);
+	}
 	
 	/*** .header ***/
 	.header,
