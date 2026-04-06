@@ -92,7 +92,7 @@ DEPENDENCIES
   jekyll-feed (~> 0.12)
   minima (~> 2.5)
   rake
-  stringio
+  stringio (~> 3.0.4)
   tzinfo (>= 1, < 3)
   tzinfo-data
   wdm (~> 0.1.1)
